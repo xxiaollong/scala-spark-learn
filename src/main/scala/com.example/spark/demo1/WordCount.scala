@@ -17,7 +17,7 @@ object WordCount {
 
     //3. 根据具体的数据来源来创建RDD
     //参数1:文件路径   参数2:并行度（分片）
-    val lines = sc.textFile("E:/file/spark/WordCount.txt")
+    val lines = sc.textFile("E:\\file\\spark\\WordCount.txt")
 
     //4.1 .对初始RDD进行转换处理
     val words = lines.flatMap(line => line.split(" "))  //将每一行切分成单词，并把切分结果合并为Map集合
