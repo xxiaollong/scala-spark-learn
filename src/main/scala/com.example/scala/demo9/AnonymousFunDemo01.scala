@@ -116,7 +116,7 @@ object AnonymousFunDemo01 {
 
   // 匿名函数简介
   def demo1(): Unit = {
-    // def f1 代表指向匿名函数的一个变量
+    // val f1 代表指向匿名函数的一个变量
     // (n: Int) => n * n 即为匿名函数，
     // (n: Int)是参数列表
     // n * n为函数体

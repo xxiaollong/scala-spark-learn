@@ -11,7 +11,7 @@ public class TestMain1 {
         String str = "aa";
         boolean aa = str.contains("aa");
 
-
+        System.out.println(aa +" "+ str);
     }
 
 }

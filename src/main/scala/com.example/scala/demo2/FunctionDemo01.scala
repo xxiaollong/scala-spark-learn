@@ -2,6 +2,8 @@ package com.example.scala.demo2
 
 /**
   * 函数的基本语法和定义
+  *
+  *
   */
 object FunctionDemo01 {
   def main(args: Array[String]): Unit = {
