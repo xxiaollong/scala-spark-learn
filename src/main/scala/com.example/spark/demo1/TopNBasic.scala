@@ -3,7 +3,7 @@ package com.example.spark.demo1
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
-  * Created by admin on 2017/6/12.
+  * 求TopN
   */
 object TopNBasic {
 
@@ -32,6 +32,9 @@ object TopNBasic {
 
 }
 
+/**
+  * 求分组TopN
+  */
 object groupTopN{
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()

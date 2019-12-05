@@ -30,6 +30,7 @@ object CaseClassDemo01 {
     println("c2 : " + c2)
     println("c3 : " + c3)
 
+
   }
 
   // 样例类的模式匹配

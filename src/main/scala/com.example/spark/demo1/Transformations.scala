@@ -15,8 +15,8 @@ object Transformations {
 //    flatMapTransformation(sc)
 //    groupByKeyTransformation(sc)
 //      reduceByKeyTransformation(sc)
-      joinTransformation(sc)
-//      cogroupTransformations(sc)
+//      joinTransformation(sc)
+      cogroupTransformations(sc)
 
     //释放资源
     sc.stop()

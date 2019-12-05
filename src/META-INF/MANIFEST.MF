@@ -1,3 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: com.example.scala.demo8.MatchDemo01
-
+Main-Class: com.example.scala.demo1.PrintDemo

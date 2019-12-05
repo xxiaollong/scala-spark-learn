@@ -4,7 +4,7 @@ package com.example.scala.demo7
   * 视图
   *     产生懒加载效果
   */
-object ViueDemo01 {
+object ViewDemo01 {
   def main(args: Array[String]): Unit = {
     demo1()
   }

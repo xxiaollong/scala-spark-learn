@@ -2,23 +2,23 @@ package com.example.scala.demo7
 
 /**
   * 集合常用操作
-  *   map
-  *   flatMap
-  *   filter
-  *   reduce
-  *   fold
-  *   scan
-  *   zip
+  * map
+  * flatMap
+  * filter
+  * reduce
+  * fold
+  * scan
+  * zip
   */
 object AllSetDemo01 {
   def main(args: Array[String]): Unit = {
     //    demo1()
-    //    demo2()
+    demo2()
     //    demo3()
     //    demo4()
     //    demo5()
     //    demo6()
-    demo7()
+    //    demo7()
   }
 
   // zip函数: 拉链（合并）
@@ -154,6 +154,10 @@ object AllSetDemo01 {
     val res2 = list2.flatten
     println("res2 = " + res2)
 
+    // 先对集合中的每个集合排序，再做扁平化
+    val list3 = List(List(1,2), List(4,3))
+    val res3: List[Int] = list3.flatMap(_.sorted)
+    println("res3 = " + res3)
   }
 
 
