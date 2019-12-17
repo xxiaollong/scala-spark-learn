@@ -1,4 +1,4 @@
-package com.example.spark.demo2.rdd
+package com.example.spark.rdd.create
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}

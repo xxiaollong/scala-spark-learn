@@ -1,4 +1,4 @@
-package com.example.spark.demo2.operators
+package com.example.spark.rdd.operators
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
@@ -28,11 +28,52 @@ object Transformations {
     //    my_repartiton(sc)
     //    my_sortBy(sc)
     //    my_intersection_union_subtract_cartesian(sc)
-    my_zip(sc)
-
+    //    my_zip(sc)
+    //    my_cache_persist(sc)
+    my_checkpoint(sc)
 
     // 关闭资源
     sc.stop()
+  }
+
+
+  /**
+    * checkpoint: 设置检查点，需要制定检查点保存的磁盘目录
+    *
+    * 注意：设置检查点和对应行动算的前后顺序
+    */
+  def my_checkpoint(sc: SparkContext): Unit = {
+    val listRdd: RDD[Int] = sc.makeRDD(1 to 10, 3)
+    val mapRdd = listRdd.map((_, 1))
+
+    val byKey = mapRdd.reduceByKey(_ + _)
+
+    // 设置检查点
+    sc.setCheckpointDir("checkPoint")
+    byKey.checkpoint()
+
+    byKey.collect()
+    println(byKey.toDebugString)
+
+  }
+
+  /**
+    * cache,persist: 缓存RDD数据，cache()的底层调用persist()
+    * persist默认使用: StorageLevel.MEMORY_ONLY方式缓存
+    */
+  def my_cache_persist(sc: SparkContext): Unit = {
+
+    val listRdd: RDD[Int] = sc.makeRDD(1 to 10, 3)
+    val mapRdd = listRdd.map((_, 1))
+
+    // 设置缓存
+    mapRdd.cache()
+    mapRdd.persist()
+
+    val byKey = mapRdd.reduceByKey(_ + _)
+    byKey.collect()
+    println(byKey.toDebugString)
+
   }
 
 

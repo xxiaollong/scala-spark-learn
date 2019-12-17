@@ -5,8 +5,8 @@ import scala.collection.mutable.ArrayBuffer
 /**
   * 数组
   *
-  *   定长数组
-  *   变长数组
+  *   定长数组：Array
+  *   变长数组：ArrayBuffer
   *
   */
 object ArrayDemo01 {
